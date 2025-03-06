@@ -5,7 +5,7 @@
 ## Features
 
 - **Extract Repository Links:** Finds all contributions from a GitHub user's activity timeline.
-- **Flexible Output Options:** Return results as a string, write them to a file, or copy them to the clipboard.
+- **Flexible Output Options:** Return results as a list of repository links, write them to a file, or copy them to the clipboard.
 
 ## Installation
 

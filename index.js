@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 
 import puppeteer from "puppeteer";
-import fs from "fs";
 import clipboardy from "clipboardy";
 
 // Default options for the function
 const defaultOptions = {
-  shouldCreateFile: false,
   shouldCopyToClipboard: false,
-  outputFile: "repo_links.txt",
 };
 
 /**
@@ -16,9 +13,7 @@ const defaultOptions = {
  *
  * @param {string} username - The GitHub username (required).
  * @param {object} options - Optional configuration options.
- *   @property {boolean} shouldCreateFile - If true, writes the links to a file.
  *   @property {boolean} shouldCopyToClipboard - If true, copies the links to clipboard.
- *   @property {string} outputFile - The file name to save the links if shouldCreateFile is true.
  *
  * @returns {Promise<string[]>} - A promise that resolves to the repository links.
  *
@@ -84,16 +79,12 @@ export default async function findContributions(username, options = {}) {
     ];
   });
 
-  // Write to file if option is enabled
-  if (options.shouldCreateFile) {
-    fs.writeFileSync("repo_links.txt", repoLinks.join("\n"), "utf-8");
-  }
-
   // Copy to clipboard if option is enabled
-  if (options.shouldCopyToClipboard) {
+  if (opts.shouldCopyToClipboard) {
     clipboardy.writeSync(repoLinks.join("\n"));
   }
 
   await browser.close();
+
   return repoLinks;
 }

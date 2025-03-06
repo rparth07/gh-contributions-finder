@@ -1,6 +1,6 @@
 {
   "name": "gh-contributions-finder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A tool that extracts repository links from a GitHub user's contribution activity. It can be used as a programmatic API. The package fetches commit links (excluding forked repository events) from a user's GitHub activity timeline. You can choose to have the output returned as a list of repository links, written to a file, or copied to the clipboard.",
   "main": "index.js",
   "keywords": ["github", "repository", "extractor", "contributions", "commits", "activity", "web scraping", "puppeteer", "automation", "node"], 
